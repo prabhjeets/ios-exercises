@@ -12,17 +12,27 @@
 
 - (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    return @"";
+    return [characterDictionary objectForKey:@"favorite drink"];
 }
 
 - (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
     /* WORK HERE */
-    return @[];
+    NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    for (NSDictionary *dict in charactersArray) {
+        [returnArray addObject:[dict objectForKey:@"favorite drink"]];
+    }
+    
+    return returnArray;
 }
 
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
     /* WORK HERE */
-    return @{};
+    NSMutableDictionary *dict = [characterDictionary mutableCopy];
+    
+    [dict setObject:@"Time for bed" forKey:@"quote"];
+    
+    return dict;
 }
 
 @end
