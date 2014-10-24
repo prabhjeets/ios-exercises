@@ -12,7 +12,15 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @"";
+    NSInteger count = number;
+    
+    NSMutableString *counterString = [@"" mutableCopy];
+    
+    while (count <= otherNumber) {
+        [counterString appendString:[NSString stringWithFormat:@"%ld", (long)count]];
+        count++;
+    }
+    return counterString;
 }
 
 @end

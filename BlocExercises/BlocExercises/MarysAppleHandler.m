@@ -14,6 +14,9 @@
     NSString *itemToReturn;
 
     /* WORK HERE */
+    if (dollars == 4) {
+        itemToReturn = @"get out of my store";
+    }
     
     NSLog(@"For $%ld, Mary can: %@", (long)dollars, itemToReturn);
     return itemToReturn;
