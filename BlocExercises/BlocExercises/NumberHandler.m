@@ -12,17 +12,28 @@
 
 - (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
     /* WORK HERE */
-    return @0;
+    int doub = [number intValue] * 2;
+    NSNumber *num = [NSNumber numberWithInt:doub];
+    return num;
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @[];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
+    while (number <= otherNumber) {
+        [array addObject:[NSNumber numberWithInteger:number]];
+        number++;
+    }
+    return array;
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
     /* WORK HERE */
-    return 0;
+    NSMutableArray *array = [arrayOfNumbers mutableCopy];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:nil ascending:YES];
+    [array sortUsingDescriptors:@[sortDescriptor]];
+    NSInteger val = [array[0] longValue];
+    return val;
 }
 
 @end
